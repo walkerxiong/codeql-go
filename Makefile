@@ -132,7 +132,7 @@ build/testdb/check-upgrade-path : build/testdb/go.dbscheme ql/lib/go.dbscheme
 build/testdb/go.dbscheme: ql/lib/upgrades/initial/go.dbscheme
 	rm -rf build/testdb
 	echo >build/empty.trap
-	codeql dataset import -Sql/lib/upgrades/initial/go.dbscheme build/testdb build/empty.trap
+	codeql dataset import -S ql/lib/upgrades/initial/go.dbscheme build/testdb build/empty.trap
 
 .PHONY: sync-dataflow-libraries
 sync-dataflow-libraries:
